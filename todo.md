@@ -1,0 +1,11 @@
+# TODO LIST
+- [x] Contact Form
+- [x] Projects Data Fetching
+- [x] Individual Project Page 
+- [ ] Projects Page
+- [x] Blogs Page
+    - [ ] Individual Blog Pages
+- [ ] Commands
+- [ ] Connect Form to formspree 
+- [ ] Focus States
+- [ ] Accessibility 
