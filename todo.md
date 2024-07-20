@@ -2,9 +2,11 @@
 - [x] Contact Form
 - [x] Projects Data Fetching
 - [x] Individual Project Page 
-- [ ] Projects Page
+- [x] Projects Page
+- [x] Project page Styles
 - [x] Blogs Page
-    - [ ] Individual Blog Pages
+    - [x] Individual Blog Pages
+    - [x] Blog Page Styles
 - [ ] Commands
 - [ ] Connect Form to formspree 
 - [ ] Focus States

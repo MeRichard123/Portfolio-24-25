@@ -19,6 +19,8 @@ const props = defineProps({
     text-decoration: none;
     transition: all 0.3s;
     border: 1px solid #000;
+    font-size: clamp(0.7rem, 2vw, 1rem);
+    text-align: center;
 }
 
 .light-mode .btn {

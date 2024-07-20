@@ -87,4 +87,29 @@
 .footer__sitemap a {
     color: #fff;
 }
+
+@media screen and (max-width: 768px) {
+    .footer__container {
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content 10px 1fr;
+    }
+    .line {
+        width: 100%;
+        height: 5px;
+        margin-bottom: 30px;
+    }
+    .footer__content {
+        padding: 1rem;
+    }
+    .footer__sitemap {
+        padding: 1rem;
+    }
+    .footer__sitemap .container {
+        flex-direction: column;
+    }
+    .footer__sitemap a {
+        margin: 0.5rem;
+    }
+    
+}
 </style>

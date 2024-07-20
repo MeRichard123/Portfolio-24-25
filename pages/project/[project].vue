@@ -5,28 +5,98 @@ const data = ref(null);
 onMounted(async () => {
     const res = await useProjectData(project);
     data.value = res.data[0];
+    console.log(data.value.headerImage);
 });
 
 </script>
 
 <template>
     <div v-if="data">
-        <h1>{{data.title}}</h1>
-        <NuxtImg :src="data.headerImage.url" alt="" />
-        <p>{{data.techStack}}</p>
-        <MDC :value="data.contentMd" />
-        <div class="buttons">
-            <a v-if="data.siteLink">Live Site</a>
-            <a v-if="data.blogLink">Read Blog</a>
-            <a v-if="data.codeLink">See Code</a>
-            <a v-if="data.demoLink">View Demo</a>
+        <div class="project-container">
+            <h1 class="project__title">{{data.title}}</h1>
+            <NuxtImg :src="data.headerImage.url" alt="" />
+            <p class="tech_stack">{{data.techStack}}</p>
+            <MDC :value="data.contentMd" />
+            <div class="buttons">
+                <a 
+                    class="link"
+                    v-if="data.siteLink"
+                    :href="data.siteLink"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                >Live Site</a>
+                <a 
+                    class="link" 
+                    v-if="data.blogLink"
+                    :href="data.siteLink"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                >Read Blog</a>
+                <a 
+                    class="link" 
+                    v-if="data.codeLink"
+                    :href="data.siteLink"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                >See Code</a>
+                <a 
+                    class="link" 
+                    v-if="data.demoLink"
+                    :href="data.siteLink"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                >View Demo</a>
+            </div>
         </div>
+    </div>
+    <div v-else>
+        <p>Loading...</p>
     </div>
 </template>
 
 <style scoped>
 .buttons {
     display: flex;
-    gap: 1rem;
+    justify-content: center;
+    gap: 2rem;
+    padding: 20px 0;
+    margin-top: 2rem;
 }
+
+.project-container {
+    padding: 1rem;
+    max-width: 60vw;
+    margin: 0 auto;
+    text-align: left;
+    min-height: 100vh;
+}
+
+.tech_stack {
+    text-align: center;
+    color: gray;
+    font-weight: bold;
+    font-size: clamp(0.9rem, 1.1rem, 1.3rem);
+    margin: 50px auto;
+}
+
+.project-container img {
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    object-fit: contain;
+    margin-top: 20px;
+}
+
+.project__title {
+    margin-top: 30px;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .project-container {
+        max-width: 100vw;
+    }
+    
+}
+
 </style>

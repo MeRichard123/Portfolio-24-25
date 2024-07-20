@@ -49,5 +49,12 @@ export default defineNuxtConfig({
     public: {
       contentfulUrl: '',
     }
+  },
+  mdc: {  
+    highlight: {
+      highlighter: 'shiki',
+      theme: 'catppuccin-mocha',
+      langs: ['html', 'css', 'javascript', 'typescript', 'json', 'py', 'bash'],
+    },
   }
 })

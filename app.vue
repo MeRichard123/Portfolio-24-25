@@ -61,7 +61,7 @@ body {
   color: #fff;
 }
 
-.highlight {
+.highlight, p > a {
   color: #F08A4B;
 }
 
@@ -108,7 +108,7 @@ body {
   height: 10px;
 }
 
-.dark-mode .highlight {
+.dark-mode .highlight, .dark-mode p > a {
   color: #a68fff;
 }
 
@@ -123,4 +123,101 @@ h3 {
   margin-bottom: 1rem;
   font-family: 'Mogra', cursive;
 }
+
+/* For Markdown Rendering where images are in p tags */
+p:has(> img) {
+  text-align: center;
+}
+
+p > img {
+    width: 80% !important;
+    object-fit: cover !important;
+    margin: 20px auto !important;
+    text-align: center;
+}
+
+pre {
+  background-color: #2c2832;
+  padding: 2rem;
+  border-radius: 10px;
+  overflow-x: auto;
+  margin: 2rem 0;
+}
+
+p + p {
+  margin-top: 2rem;
+}
+
+hr + p {
+  margin: 2rem 0;
+}
+
+p + hr {
+  margin: 2rem 0;
+}
+
+h3:has(a) {
+  margin-top: 1rem;
+}
+
+h3 > a {
+  color: #000;
+  text-decoration: none;
+}
+
+h2:has(a) {
+  margin-top: 1rem;
+}
+h2 > a {
+  color: #000;
+  text-decoration: none;
+}
+h4:has(a) {
+  margin-top: 1rem;
+}
+h4 > a {
+  color: #000;
+  text-decoration: none;
+}
+.dark-mode h4 > a {
+  color: #fff;
+}
+.dark-mode h2 > a {
+  color: #fff;
+}
+.dark-mode h3 > a {
+  color: #fff;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+  line-height: 10px;
+  color: #c9d1d9;
+  vertical-align: middle;
+  background-color: #161b22;
+  border: solid 1px rgba(110,118,129,0.4);
+  border-bottom-color: rgba(110,118,129,0.4);
+  border-radius: 6px;
+  box-shadow: inset 0 -1px 0 rgba(110,118,129,0.4);
+}
+
+ul , ol{
+  list-style-position: inside;
+}
+
+iframe {
+    width: 100%;
+    margin: 2rem 0;
+}
+
+.article h1 {
+  margin: 2rem 0;
+}
+
+pre code {
+  color: rgb(217, 214, 214);
+}
+
 </style>
