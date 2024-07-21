@@ -9,15 +9,15 @@ import Button from '@/components/Button.vue'
            <div class="blog">
             <span class="blog__date">December 29th 2021 </span> 
             <h4>Building a Timetable Generator</h4>
-            <p>A rundown of my A-Level CS final year project</p>
+            <p>A rundown of my A-Level CS final year project.</p>
             <a href="/blogs/building-a-timetable-generator-31o7">Read More -></a>
           </div>
           <div class="line"></div>
           <div class="blog">
-            <span class="blog__date">June 11th 2020 </span> 
-            <h4>Building a CSS Framework</h4>
-            <p>How I got to building my CSS framework and why you should too</p>
-            <a href="/blogs/making-my-own-css-framework-50j9">Read More -></a>
+            <span class="blog__date">July 21st 2020 </span> 
+            <h4>Programming Principles</h4>
+            <p>An overview of different programming principles.</p>
+            <a href="/blogs/programming-principles-4emp">Read More -></a>
           </div>
          
         </div>
