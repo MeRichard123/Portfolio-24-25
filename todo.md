@@ -7,7 +7,9 @@
 - [x] Blogs Page
     - [x] Individual Blog Pages
     - [x] Blog Page Styles
-- [ ] Commands
-- [ ] Connect Form to formspree 
+- [x] Commands
+    - [ ] make commands more usable
+- [x] Connect Form to formspree 
 - [ ] Focus States
 - [ ] Accessibility 
+- [x] Populate Project Data

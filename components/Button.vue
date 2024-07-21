@@ -46,5 +46,9 @@ const props = defineProps({
     box-shadow: 14px 13px 0px 2px #8f6ff2, 15px 14px 0px 2px #fff;
 }
 
+.btn:focus {
+    outline: 2px solid #14b5c4;
+}
+
 
 </style>

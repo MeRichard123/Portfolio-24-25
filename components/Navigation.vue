@@ -88,7 +88,7 @@ export default {
                 <NuxtLink to="/">Home</NuxtLink>
             </li>
             <li class="nav__nav-list__item">
-                <div @click="toggleTheme" class="theme-toggle">
+                <div @click="toggleTheme" class="theme-toggle" tabindex="0">
                     <svg id="light" fill="#000" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                         viewBox="0 0 24 24">
                         <path
@@ -143,6 +143,10 @@ nav {
     fill: #000;
     position: absolute;
     transform: translate(-50%, -50%);
+}
+
+.theme-toggle:focus {
+    outline: 2px solid #000;
 }
 
 .dark-mode svg {

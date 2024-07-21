@@ -36,17 +36,22 @@ import Button from '@/components/Button.vue'
                 </div>
             </div>
             <div class="contact__form">
-                <form action="" @submit.prevent>
+                <form 
+                    name="contact" 
+                    action="https://formspree.io/f/mzbwnelw"
+                    method="POST"
+                >
+                    <input type="hidden" name="form-name" value="contact" />
                     <div class="input">
-                        <input type="text" required id="name"> 
+                        <input type="text" name="name" required id="name"> 
                         <label for="name">Name</label>
                     </div>
                     <div class="input">
-                        <input type="email" required id="email">
+                        <input type="email" name="email" required id="email">
                         <label for="email">E-mail</label>
                     </div>
                     <div class="input">
-                        <textarea name="" required id="message" cols="30" rows="10"></textarea>
+                        <textarea name="message" required id="message" cols="30" rows="10"></textarea>
                         <label for="message">Message</label>
                     </div>
                     <input class="send-form" type="submit" value="Send">

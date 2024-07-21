@@ -1,6 +1,50 @@
 <script setup>
 import Button from '@/components/Button.vue';
-const tags = ref(['Vue', 'Nuxt']);
+
+const projectList2024 = ref([]);
+const projectList2023 = ref([]);
+const projectList2022 = ref([]);
+const projectList2020 = ref([]);
+
+const res2024 = await $fetch('/api/projects/projectList?year=2024', {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+});
+const res2023 = await $fetch('/api/projects/projectList?year=2023', {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+});
+
+const res2022 = await $fetch('/api/projects/projectList?year=2022', {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+});
+
+const res2021 = await $fetch('/api/projects/projectList?year=2021', {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+});
+
+const res2020 = await $fetch('/api/projects/projectList?year=2020', {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+});
+
+projectList2024.value = await res2024;
+projectList2023.value = await res2023;
+projectList2022.value = await res2022.concat(res2021);
+projectList2020.value = await res2020;
+
 </script>
 
 <template>
@@ -28,18 +72,45 @@ const tags = ref(['Vue', 'Nuxt']);
 
             <div class="projects">
                 <div class="projects-2024">
-                    <ProjectCard title="Project 1"
-                        description="Lorem ipsum dolor sit amet consectetur. Erat ut consectetur nunc eleifend ornare aliquet magna dui."
-                        image="/images/TURTLES.png" :tags="tags" link="https://www.google.com" />
-                    <ProjectCard title="Project 2" description="This is a project description" image="/images/TURTLES.png"
-                        :tags="tags" link="https://www.google.com" />
+                    <ProjectCard 
+                        v-for="project in projectList2024"
+                        :key="project.title"
+                        :title="project.title"
+                        :description="project.description"
+                        :image="project.image" 
+                        :tags="project.tech" 
+                        :link="project.projectPageLink" />
                 </div>
                 <div class="projects-2023"> 
-                    <ProjectCard title="Project 3" description="This is a project description" image="/images/TURTLES.png"
-                        :tags="tags" link="https://www.google.com" />
-                    <ProjectCard title="Project 2" description="This is a project description" image="/images/TURTLES.png"
-                        :tags="tags" link="https://www.google.com" />
-                </div> 
+                    <ProjectCard 
+                        v-for="project in projectList2023"
+                        :key="project.title"
+                        :title="project.title"
+                        :description="project.description"
+                        :image="project.image" 
+                        :tags="project.tech" 
+                        :link="project.projectPageLink" />
+                </div>
+                <div class="projects-2022">
+                    <ProjectCard 
+                        v-for="project in projectList2022"
+                        :key="project.title"
+                        :title="project.title"
+                        :description="project.description"
+                        :image="project.image" 
+                        :tags="project.tech" 
+                        :link="project.projectPageLink" />
+                </div>
+                <div class="projects-2020">
+                    <ProjectCard 
+                        v-for="project in projectList2020"
+                        :key="project.title"
+                        :title="project.title"
+                        :description="project.description"
+                        :image="project.image" 
+                        :tags="project.tech" 
+                        :link="project.projectPageLink" />
+                </div>
             </div>
             <Button text="View More Projects" link="/projects" isSecondary/>
         </div>
@@ -47,8 +118,19 @@ const tags = ref(['Vue', 'Nuxt']);
     <div class="bottom" />
 </template>
 
+<style>
+:root {
+    --card-count: 0;
+    --card-height: 250px;
+    --circle-offset: 50px;
+    --left-offset-before: calc(-10% - (50px / 2) - 10px);
+    --left-offset-after: calc(-10% - (25px / 2) + 2px);
+}
+</style>
 
 <style scoped>
+
+
 .project-wrapper {
     min-height: 100dvh;
     background-size: cover;
@@ -76,15 +158,18 @@ const tags = ref(['Vue', 'Nuxt']);
     background-color: #505050;
 }
 
+/* 2023 Label  */
+
 .projects-2023::before {
+    --card-count: 2;
     content: '2023';
     position: absolute;
     text-align: center;
     width: 50px;
     padding: 10px;
     height: 20px;
-    top: calc(250px * 3 - 50px);
-    left: calc(-10% - (50px / 2) - 10px);
+    top: calc((var(--card-height) * var(--card-count)) - var(--circle-offset));
+    left: var(--left-offset-before);
     background-color: #F8E279;
     z-index: 1;   
 }
@@ -99,16 +184,20 @@ const tags = ref(['Vue', 'Nuxt']);
 
 .projects-2023::after {
     /* create circle */
+  --card-count: 2;
   content: '';
   position: absolute;
   width: 25px;
   height: 25px;
-  top: calc(250px * 3);
-  left: calc(-10% - (25px / 2) + 2px);
+  top: calc(var(--card-height) * var(--card-count));
+  left: var(--left-offset-after);
   background-color: #505050;
   border-radius: 50%;
   z-index: 1;
 }
+
+
+/* 2024 Label */
 .projects-2024::before {
     content: '2024';
     position: absolute;
@@ -139,6 +228,77 @@ const tags = ref(['Vue', 'Nuxt']);
   background-color: #505050;
   border-radius: 50%;
   z-index: 1;
+}
+
+/* 2022 Label */
+.projects-2022::before {
+    --card-count: calc(2 + 1);
+    content: '2022';
+    position: absolute;
+    text-align: center;
+    width: 50px;
+    padding: 10px;
+    height: 20px;
+     top: calc((var(--card-height) * var(--card-count)) - var(--circle-offset));
+    left: var(--left-offset-before);
+    z-index: 1;   
+}
+
+.light-mode .projects-2022::before {
+    background-color: #F8E279;
+}
+.dark-mode .projects-2022::before {
+    background-color: #8442D8;
+}
+
+.projects-2022::after {
+    /* create circle */
+  --card-count: calc(2 + 1);
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: calc(var(--card-height) * var(--card-count));
+  left: var(--left-offset-after);
+  background-color: #505050;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* 2020 Label */
+.projects-2020::before {
+    --card-count: calc(5 + 1);
+    content: '2020';
+    position: absolute;
+    text-align: center;
+    width: 50px;
+    padding: 10px;
+    height: 20px;
+    top: calc((var(--card-height) * var(--card-count)) - var(--circle-offset));
+    left: var(--left-offset-before);
+    z-index: 1;   
+}
+
+.projects-2020::after {
+    /* create circle */
+  --card-count: calc(5 + 1);
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: calc(var(--card-height) * var(--card-count));
+  left: var(--left-offset-after);
+  background-color: #505050;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.light-mode .projects-2020::before {
+    background-color: #F8E279;
+}
+
+.dark-mode .projects-2020::before {
+    background-color: #8442D8;
 }
 
 .bottom {
@@ -174,7 +334,9 @@ svg {
         display: none;
     }
     .projects-2023::after, .projects-2024::after,
-    .projects-2023::before, .projects-2024::before{
+    .projects-2023::before, .projects-2024::before,
+    .projects-2022::after, .projects-2022::before,
+    .projects-2020::after, .projects-2020::before {
         display: none;
     }
     
@@ -213,14 +375,18 @@ svg {
 .projects {
     margin-bottom: 3rem;
 }
-.projects, .projects-2024, .projects-2023{
+.projects, .projects-2024, .projects-2023, .projects-2022, .projects-2020 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 20px;
 }
 
-   .dark-mode .projects-2023::after, .dark-mode .projects-2024::after, .dark-mode .projects::before
+   .dark-mode .projects-2023::after, 
+   .dark-mode .projects-2024::after, 
+    .dark-mode .projects-2022::after,
+    .dark-mode .projects-2020::after,
+   .dark-mode .projects::before
     {
         background-color: #fff;
     }

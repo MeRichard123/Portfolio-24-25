@@ -4,8 +4,13 @@ const data = ref(null);
 
 onMounted(async () => {
     const res = await useProjectData(project);
-    data.value = res.data[0];
-    console.log(data.value.headerImage);
+    try {
+        data.value = res.data[0];
+    } catch (error) {
+        throw new Error({
+            statusCode: 404,
+        });
+    }
 });
 
 </script>
@@ -49,8 +54,8 @@ onMounted(async () => {
             </div>
         </div>
     </div>
-    <div v-else>
-        <p>Loading...</p>
+    <div v-else class="loading">
+        <ProjectDetailSkeleton />
     </div>
 </template>
 
@@ -90,6 +95,13 @@ onMounted(async () => {
 .project__title {
     margin-top: 30px;
     text-align: center;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 @media screen and (max-width: 768px) {

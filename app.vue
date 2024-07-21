@@ -69,7 +69,15 @@ body {
   color: #6b2b02;
   position: relative;
   z-index: 10;
+  cursor: pointer;
 }
+
+.link:focus {
+  outline: 2px solid #14b5c4;
+  padding: 2px;
+  border-radius: 5px;
+}
+
 .dark-mode .link {
   color: #f3f1f6;
   position: relative;
