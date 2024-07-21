@@ -6,19 +6,20 @@ import Button from '@/components/Button.vue'
     <div class="container" id="blogs">
         <h2>Featured Blog Posts</h2>
         <div class="blog-container">
-          <div class="blog">
-            <span class="blog__date">March 15th 2024 </span> 
-            <h4>Building a CSS Framework</h4>
-            <p>How I got to building my CSS framework and why you should too</p>
-            <a href="/">Read More -></a>
+           <div class="blog">
+            <span class="blog__date">December 29th 2021 </span> 
+            <h4>Building a Timetable Generator</h4>
+            <p>A rundown of my A-Level CS final year project</p>
+            <a href="/blogs/building-a-timetable-generator-31o7">Read More -></a>
           </div>
           <div class="line"></div>
           <div class="blog">
-            <span class="blog__date">March 15th 2024 </span> 
+            <span class="blog__date">June 11th 2020 </span> 
             <h4>Building a CSS Framework</h4>
             <p>How I got to building my CSS framework and why you should too</p>
-            <a href="/">Read More -></a>
+            <a href="/blogs/making-my-own-css-framework-50j9">Read More -></a>
           </div>
+         
         </div>
         <div class="btn-container">
             <Button text="More Posts" link="/blogs" />

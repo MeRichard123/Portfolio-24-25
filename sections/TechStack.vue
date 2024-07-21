@@ -68,14 +68,6 @@ import Button from '@/components/Button.vue'
     gap: 2rem;
 }
 
-@media screen and (max-width: 768px) {
-    .skills-container {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(3, 1fr);
-    }
-    
-}
-
 .skill-title {
     text-align: center;
     margin-bottom: 15px;
@@ -113,5 +105,12 @@ li {
     text-align: left;
     gap: 1rem;
     margin: 10px 60px;
+}
+
+@media screen and (max-width: 768px) {
+    .skills-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+    }
 }
 </style>

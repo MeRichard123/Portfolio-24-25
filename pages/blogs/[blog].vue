@@ -23,7 +23,6 @@ useSeoMeta({
 });
 
 const article = await getArticle(slug.value);
-console.log(article);
 
 function find_next(markdown, firstIdx, string) {
     let failSafe = 0;

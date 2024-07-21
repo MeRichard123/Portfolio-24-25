@@ -7,7 +7,6 @@ interface ProjectType {
   year: number;
 }
 
-
 export default defineEventHandler(async (event) : Promise<ProjectType[]> => {
     try {
         let yearParam : any = getQuery(event).year;
