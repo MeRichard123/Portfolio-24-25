@@ -200,7 +200,7 @@ export default defineComponent({
 
 @media screen and (max-width: 768px) {
     .about-container {
-        margin: 0 3rem 0 3rem;
+        margin: 0 1rem 0 1rem;
     }
 
     .links {
@@ -373,5 +373,12 @@ hr {
 
 p:first-of-type {
     margin-top: 35px;
+}
+
+@media screen and (max-width: 768px) {
+    .heading {
+        line-height: 38px;
+    }
+    
 }
 </style>

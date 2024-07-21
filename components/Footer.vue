@@ -110,6 +110,10 @@
     .footer__sitemap a {
         margin: 0.5rem;
     }
+    .flex {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
     
 }
 </style>

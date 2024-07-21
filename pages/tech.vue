@@ -176,4 +176,11 @@ h3 {
     font-family: 'Roboto Mono', monospace;  
     color: gray;
 }
+
+@media screen and (max-width: 768px) {
+    p {
+        text-align: justify;
+    }
+    
+}
 </style>

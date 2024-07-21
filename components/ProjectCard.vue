@@ -113,4 +113,10 @@ const props = defineProps(
 .project-card:nth-last-of-type(2n+1) {
     flex-direction: row-reverse;
 }
+
+@media screen and (max-width: 768px) {
+    .project-card {
+        margin: 1px;
+    }
+}
 </style>

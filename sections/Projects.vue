@@ -132,10 +132,11 @@ projectList2020.value = await res2020;
 
 
 .project-wrapper {
-    min-height: 100dvh;
+    min-height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
     padding-top: 300px;
+    width: 100%;
 }
 
 .project-container__title {

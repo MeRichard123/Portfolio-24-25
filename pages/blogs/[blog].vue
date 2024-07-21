@@ -130,6 +130,8 @@ markdown.value = parse_embed(article.body_markdown);
 
 .tags { 
     margin: 2rem 0;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .time {
@@ -140,5 +142,11 @@ markdown.value = parse_embed(article.body_markdown);
 .date {
     text-align: center;
     margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 800px) {
+    .article{
+        text-align: justify !important;
+    }
 }
 </style>

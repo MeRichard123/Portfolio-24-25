@@ -1,8 +1,3 @@
-<script>
-import Button from '@/components/Button.vue'
-
-</script>
-
 <template>
     <div class="container" id="contact">
         <div class="top"></div>
@@ -112,6 +107,9 @@ import Button from '@/components/Button.vue'
         grid-template-columns: 1fr;
         grid-template-rows: auto auto;
     }
+    .desc__container {
+        text-align: center;
+    }
 }
 
 .contact__desc {
@@ -167,6 +165,12 @@ import Button from '@/components/Button.vue'
     border-radius: 51px;
     margin: 10px 0;
     border: none;
+}
+
+.dark-mode .contact__form input,
+.dark-mode .contact__form textarea {
+    background-color: #130F26;
+    color: #fff;
 }
 
 .send-form {

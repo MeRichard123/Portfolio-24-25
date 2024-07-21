@@ -156,6 +156,12 @@ p + p {
   margin-top: 2rem;
 }
 
+p + ul {
+  margin: 2rem 0;
+}
+
+
+
 hr + p {
   margin: 2rem 0;
 }

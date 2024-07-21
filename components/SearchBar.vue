@@ -1,6 +1,6 @@
 <script setup>
 const cmd = defineModel({ default: ':' });
-const showing = ref(true);
+const showing = ref(false);
 const infoShowing = ref(false);
 const cmdbox = ref(null);
 const cmdHistory = ref([]);
