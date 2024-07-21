@@ -156,7 +156,7 @@ p + p {
   margin-top: 2rem;
 }
 
-p + ul {
+p + ul:not(.activeFilterUL):not(.skillUL){
   margin: 2rem 0;
 }
 

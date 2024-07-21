@@ -63,7 +63,7 @@ const computeFilter = (post) => (
                 <div class="blogs">
                     <div class="activeFilters">
                         <p>Currently Viewing:</p>
-                        <ul>
+                        <ul class="activeFilterUL">
                             <li v-for="filter in activeFilters" :key="filter">
                                 #{{filter}}
                             </li>

@@ -9,7 +9,7 @@ import Button from '@/components/Button.vue'
         <div class="skills-container">
             <div class="skill-block">
                 <p class="skill-title">Languages</p>
-                <ul>
+                <ul class="skillUL">
                     <li>Rust</li>
                     <li>Typescript</li>
                     <li>C</li>
@@ -19,7 +19,7 @@ import Button from '@/components/Button.vue'
             </div>
             <div class="skill-block">
                 <p class="skill-title">Frontend</p>
-                <ul>
+                <ul class="skillUL">
                     <li>Vue JS</li>
                     <li>React / Next JS</li>
                     <li>HTML/ CSS</li>
@@ -29,7 +29,7 @@ import Button from '@/components/Button.vue'
             </div>
             <div class="skill-block">
                 <p class="skill-title">Backend/ Tools</p>
-                <ul>
+                <ul class="skillUL">
                     <li>Django</li>
                     <li>Express</li>
                     <li>Git</li>
