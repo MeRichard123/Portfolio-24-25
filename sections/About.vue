@@ -71,11 +71,17 @@ export default defineComponent({
 
         function calculateAge() {
             const date = new Date();
-            const dob = new Date('11-08-2003');
+            // I am keeping the - for readability in code, but for browser 
+            // compatibility I am replacing it with / (looking at you safari).
+            const dob = new Date('11-08-2003'.replace(/-/g, "/"));
 
             const ageInMillis = (date.getTime() - dob.getTime());
             const ageInYears = ageInMillis / (1000 * 60 * 60 * 24 * 365.25);
             const roundedAge = ageInYears.toFixed(11);
+
+            if (isNaN(roundedAge)) {
+                return "20?";
+            }
 
             return roundedAge.toString();
         };
