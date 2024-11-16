@@ -6,6 +6,7 @@ onMounted(async () => {
     const res = await useProjectData(project);
     try {
         data.value = res.data[0];
+        console.log(data.value);
     } catch (error) {
         throw new Error({
             statusCode: 404,
@@ -33,21 +34,21 @@ onMounted(async () => {
                 <a 
                     class="link" 
                     v-if="data.blogLink"
-                    :href="data.siteLink"
+                    :href="data.blogLink"
                     rel="noopener noreferrer"
                     target="_blank"
                 >Read Blog</a>
                 <a 
                     class="link" 
                     v-if="data.codeLink"
-                    :href="data.siteLink"
+                    :href="data.codeLink"
                     rel="noopener noreferrer"
                     target="_blank"
                 >See Code</a>
                 <a 
                     class="link" 
                     v-if="data.demoLink"
-                    :href="data.siteLink"
+                    :href="data.demoLink"
                     rel="noopener noreferrer"
                     target="_blank"
                 >View Demo</a>
