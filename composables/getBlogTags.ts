@@ -18,22 +18,20 @@ export const getBlogTags = async () => {
 }
 
 export const getBlogPosts = async () => {
+    
     const res: any = await $fetch(`${URL}?username=merichard123`, {
         method: 'GET',
         headers: {
-        'Content-Type': 'application/json',
+            'Content-Type': 'application/json',
         },
     });
-
+    
     return res;
 }
 
 export const getArticle = async (slug: string) => {
-    const res: any = await $fetch(`${URL}/merichard123/${slug}`, {
+    const res: any = await $fetch(`/api/blogs/blogPost?slug=${slug}`, {
         method: 'GET',
-        headers: {
-        'Content-Type': 'application/json',
-        },
     });
     const article = res;
  

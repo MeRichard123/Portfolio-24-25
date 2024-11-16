@@ -60,7 +60,22 @@ function parse_embed(markdown) {
     return markdown;
 }
 
+function parse_latex(markdown) {
+    let start;
+    start = markdown.search(/{% katex %}/g);
+    if (start === -1) {
+        return;
+    }
+    if (start > 0) {
+        // todo maybeeeee???
+        let next = markdown.replace(/{% katex %}\s+/g, '\$$$');
+        return next.replace(/\s{% endkatex %}/g, '\$$$');
+    }
+    return markdown;
+}
+
 markdown.value = parse_embed(article.body_markdown);
+//markdown.value = parse_latex(markdown.value);
 
 </script>
 

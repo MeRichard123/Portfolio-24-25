@@ -177,6 +177,7 @@ h3:has(a) {
 h3 > a {
   color: #000;
   text-decoration: none;
+  font-size: 1.8rem;
 }
 
 h2:has(a) {
@@ -185,6 +186,7 @@ h2:has(a) {
 h2 > a {
   color: #000;
   text-decoration: none;
+  font-size: 2.5rem;
 }
 h4:has(a) {
   margin-top: 1rem;

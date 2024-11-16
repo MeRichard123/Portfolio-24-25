@@ -46,6 +46,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     contentfulSpace: '',
     contentfulKey: '',
+    devtoApiKey: '',
     public: {
       contentfulUrl: '',
     }
@@ -54,7 +55,7 @@ export default defineNuxtConfig({
     highlight: {
       highlighter: 'shiki',
       theme: 'catppuccin-mocha',
-      langs: ['html', 'css', 'javascript', 'typescript', 'json', 'py', 'bash'],
+      langs: ['html', 'css', 'javascript', 'typescript', 'json', 'py', 'bash', 'cs'],
     },
   }
 })
