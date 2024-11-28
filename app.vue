@@ -160,7 +160,10 @@ p + ul:not(.activeFilterUL):not(.skillUL){
   margin: 2rem 0;
 }
 
-
+p:has(a) {
+  text-wrap: wrap;
+  overflow-wrap: break-word;
+}
 
 hr + p {
   margin: 2rem 0;
