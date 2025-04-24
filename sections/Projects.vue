@@ -1,10 +1,18 @@
 <script setup>
 import Button from '@/components/Button.vue';
 
+const projectList2025 = ref([]);
 const projectList2024 = ref([]);
 const projectList2023 = ref([]);
 const projectList2022 = ref([]);
 const projectList2020 = ref([]);
+
+const res2025 = await $fetch('/api/projects/projectList?year=2025', {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+});
 
 const res2024 = await $fetch('/api/projects/projectList?year=2024', {
     method: 'GET',
@@ -40,6 +48,7 @@ const res2020 = await $fetch('/api/projects/projectList?year=2020', {
     },
 });
 
+projectList2025.value = await res2025;
 projectList2024.value = await res2024;
 projectList2023.value = await res2023;
 projectList2022.value = await res2022.concat(res2021);
@@ -71,6 +80,16 @@ projectList2020.value = await res2020;
             </svg>
 
             <div class="projects">
+                <div class="projects-2025">
+                    <ProjectCard 
+                        v-for="project in projectList2025"
+                        :key="project.title"
+                        :title="project.title"
+                        :description="project.description"
+                        :image="project.image" 
+                        :tags="project.tech" 
+                        :link="project.projectPageLink" />
+                </div>
                 <div class="projects-2024">
                     <ProjectCard 
                         v-for="project in projectList2024"
@@ -162,7 +181,7 @@ projectList2020.value = await res2020;
 /* 2023 Label  */
 
 .projects-2023::before {
-    --card-count: 2;
+    --card-count: 3;
     content: '2023';
     position: absolute;
     text-align: center;
@@ -185,7 +204,7 @@ projectList2020.value = await res2020;
 
 .projects-2023::after {
     /* create circle */
-  --card-count: 2;
+  --card-count: 3;
   content: '';
   position: absolute;
   width: 25px;
@@ -197,16 +216,48 @@ projectList2020.value = await res2020;
   z-index: 1;
 }
 
+/* 2025 Label */
+.projects-2025::before {
+    content: '2025';
+    position: absolute;
+    text-align: center;
+    width: 50px;
+    padding: 10px;
+    height: 20px;
+    top: calc((var(--card-height) - var(--circle-offset) - var(--circle-offset)));
+    left: var(--left-offset-before);
+    z-index: 1;   
+}
+.light-mode .projects-2025::before {
+    background-color: #F8E279;
+}
+.dark-mode .projects-2025::before {
+    background-color: #8442D8;
+}
+.projects-2025::after {
+    /* create circle */
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: calc(var(--card-height) - var(--circle-offset));
+  left: var(--left-offset-after);
+  background-color: #505050;
+  border-radius: 50%;
+  z-index: 1;
+}
+
 
 /* 2024 Label */
 .projects-2024::before {
+    --card-count: 2;
     content: '2024';
     position: absolute;
     text-align: center;
     width: 50px;
     padding: 10px;
     height: 20px;
-    top: calc(15px - 50px);
+    top: calc((var(--card-height) * var(--card-count)) - var(--circle-offset)); 
     left: calc(-10% - (50px / 2) - 10px);
     z-index: 1;   
 }
@@ -220,11 +271,12 @@ projectList2020.value = await res2020;
 
 .projects-2024::after {
     /* create circle */
+  --card-count: 2;
   content: '';
   position: absolute;
   width: 25px;
   height: 25px;
-  top: 15px;
+  top: calc((var(--card-height) * var(--card-count)));
   left: calc(-10% - (25px / 2) + 2px);
   background-color: #505050;
   border-radius: 50%;
@@ -233,7 +285,7 @@ projectList2020.value = await res2020;
 
 /* 2022 Label */
 .projects-2022::before {
-    --card-count: calc(2 + 1);
+    --card-count: calc(2 + 2);
     content: '2022';
     position: absolute;
     text-align: center;
@@ -254,7 +306,7 @@ projectList2020.value = await res2020;
 
 .projects-2022::after {
     /* create circle */
-  --card-count: calc(2 + 1);
+  --card-count: calc(2 + 2);
   content: '';
   position: absolute;
   width: 25px;
@@ -268,7 +320,7 @@ projectList2020.value = await res2020;
 
 /* 2020 Label */
 .projects-2020::before {
-    --card-count: calc(5 + 1);
+    --card-count: calc(5 + 2);
     content: '2020';
     position: absolute;
     text-align: center;
@@ -282,7 +334,7 @@ projectList2020.value = await res2020;
 
 .projects-2020::after {
     /* create circle */
-  --card-count: calc(5 + 1);
+  --card-count: calc(5 + 2);
   content: '';
   position: absolute;
   width: 25px;

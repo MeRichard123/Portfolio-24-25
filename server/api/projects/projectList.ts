@@ -14,6 +14,14 @@ export default defineEventHandler(async (event) : Promise<ProjectType[]> => {
 
         return [
             {
+                image: '/projects/physx.png',
+                title: 'Physics Simulation',
+                tech: ['PhysX', 'C++','OpenGL'],
+                description: "A Physics Simulation of a Tree House being chopped down.",
+                projectPageLink: '/project/physics-simulation-tree-destruction',
+                year: 2024
+            },
+            {
                 image: '/projects/dss.png',
                 title: 'Digital Sky Studios',
                 tech: ['ReactJS', 'Three.js'],
