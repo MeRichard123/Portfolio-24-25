@@ -428,7 +428,7 @@ svg {
 .projects {
     margin-bottom: 3rem;
 }
-.projects, .projects-2024, .projects-2023, .projects-2022, .projects-2020 {
+.projects, .projects-2024, .projects-2023, .projects-2022, .projects-2020, .projects-2025 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -439,6 +439,7 @@ svg {
    .dark-mode .projects-2024::after, 
     .dark-mode .projects-2022::after,
     .dark-mode .projects-2020::after,
+    .dark-mode .projects-2025::after,
    .dark-mode .projects::before
     {
         background-color: #fff;
