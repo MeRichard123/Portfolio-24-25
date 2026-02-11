@@ -124,8 +124,8 @@ export default defineComponent({
                 >
                 {{char}}
             </span> 
-            year old Software Developer and Computer Science Student based in the UK. I am currently pursuing a
-            bachelors degree at the University of Lincoln; graduating in 2025.</p>
+            year old Software Developer and Computer Science Student based in the UK. I am currently pursuing a <a href="https://merichard123.github.io" target="_blank" rel="noopener noreferrer">Masters by Research</a>
+            degree at the University of Lincoln; graduating in 2026.</p>
         <p>I design <span class="highlight">accessible</span>, <span class="highlight">responsive websites</span>,
             prioritising <span class="highlight">user experience</span> through
             innovation. A curious learner, I
